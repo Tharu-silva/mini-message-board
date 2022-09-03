@@ -13,6 +13,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+//Supports url and json parsing
+app.use(express.urlencoded());
+// var bodyParser = require('body-parser')
+// app.use( bodyParser.json() );       // to support JSON-encoded bodies
+// app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+//   extended: true
+// })); 
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
